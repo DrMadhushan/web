@@ -43,6 +43,7 @@ const sendMessage = (form) => {
   // set headers
   xhr.setRequestHeader("Content-Type", "text/html");
   xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+  xhr.setRequestHeader("Access-Control-Allow-Origin", "");
 
   try {
     xhr.send(data);
