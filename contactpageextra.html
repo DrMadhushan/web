@@ -1,0 +1,119 @@
+<div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+    <form id="contact-form" method="post" name="contactForm" role="form" class="php-email-form">
+    <!-- <form method="post" id="contact-form" name="contactForm" role="form"> -->
+      <div class="row">
+        <div class="form-group col-md-6">
+          <label for="name">Your Name</label>
+          <input type="text" name="fname" class="form-control" id="form-name" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="name">Your Email</label>
+          <input type="email" class="form-control" name="email" id="form-email" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Subject</label>
+        <input type="text" class="form-control" name="subject" id="form-subject" required>
+      </div>
+      <div class="form-group">
+        <label for="name">Message</label>
+        <textarea class="form-control" name="message" rows="8" id="form-message" required></textarea>
+      </div>
+      <!-- <div class="my-3">
+        <div class="loading">Loading</div>
+        <div class="error-message"></div>
+        <div class="sent-message">Your message has been sent. Thank you!</div>
+      </div> -->
+
+      <div class="text-center">
+        <div onclick="sendMessage(contactForm);" class="btn p-2" style="background-color: #149ddd; color: white;">Send Message</div>
+      </div>
+      
+      <!-- <div class="text-center"><button type="submit" onclick="sendMessage(contactForm);" >Send Message</button></div> -->
+      <div id="res-msg" class="p-2">
+        <!-- results of sending message onclick="sendMessage(name, email, subject, message)" -->
+      </div>
+    </form>
+  </div>
+<script>
+  // const sendMessage = (name, email, subject, message) => {
+const sendMessage = (form) => {
+  console.log("sending data");
+  let result = document.getElementById("res-msg");
+
+  if (
+    !form.fname.value ||
+    !form.email.value ||
+    !form.subject.value ||
+    !form.message.value
+  ) {
+    result.innerHTML = `
+        <div class="alert alert-warning" role="alert">
+            Required input fields empty!
+        </div>
+    `;
+    return;
+  }
+  //   var mail_format = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+  let mail_format = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+  if (!mail_format.test(form.email.value)) {
+    result.innerHTML = `
+        <div class="alert alert-warning" role="alert">
+            Invalid email address!
+        </div>
+    `;
+    return;
+  }
+
+  const xhr = new XMLHttpRequest();
+  const form_url =
+    "https://docs.google.com/forms/d/e/1FAIpQLSeZL9alHC3ohE2M_rNR6jykQxqZP2ZJ8OJPsIPnaqx5ihp2RQ/formResponse";
+  xhr.open("POST", form_url);
+
+  let data = new FormData();
+
+  data.append("entry.2003193277", form.fname.value);
+  data.append("entry.241612218", form.email.value);
+  data.append("entry.1846443364", form.subject.value);
+  data.append("entry.416243322", form.message.value);
+
+  // set headers
+  xhr.setRequestHeader("Content-Type", "text/html");
+  xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+  xhr.setRequestHeader("Access-Control-Allow-Origin", "");
+
+  try {
+    xhr.send(data);
+    // listen for `load` event
+    xhr.onload = () => {
+      result.innerHTML = `
+          <div class="alert alert-success" role="alert">
+              Message sent successfully!
+          </div>
+        `;
+
+      console.log(xhr.responseText);
+      console.log("message sent");
+    };
+    xhr.onerror = () => {
+      result.innerHTML = `
+            <div class="alert alert-danger" role="alert">
+                Message sending failed!<br>
+                Something went wrong
+            </div>
+        `;
+    };
+  } catch (error) {
+    result.innerHTML = `
+        <div class="alert alert-danger" role="alert">
+            Message sending failed!<br>
+            Check your internet connection
+        </div>
+    `;
+    console.log(xhr.responseText);
+    console.log("message not sent");
+  }
+};
+
+</script>

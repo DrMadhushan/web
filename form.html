@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form" 
+    action="https://docs.google.com/forms/d/e/1FAIpQLSeZL9alHC3ohE2M_rNR6jykQxqZP2ZJ8OJPsIPnaqx5ihp2RQ/formResponse" 
+    target="my-response-iframe" method="post">
+    <div class="row">
+        <div class="form-group col-md-6">
+          <label for="name">Your Name</label>
+          <input type="text" name="entry.2003193277" class="form-control" id="form-name" required>
+        </div>
+        <div class="form-group col-md-6">
+          <label for="name">Your Email</label>
+          <input type="email" class="form-control" name="entry.241612218" id="form-email" required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="name">Subject</label>
+        <input type="text" class="form-control" name="entry.1846443364" id="form-subject" required>
+      </div>
+      <div class="form-group">
+        <label for="name">Message</label>
+        <textarea class="form-control" name="entry.416243322" rows="8" id="form-message" required></textarea>
+      </div>
+      <!-- <a> -->
+        <input type="submit" value="submit">
+      <!-- </a> -->
+    </div>
+    </form>
+  </div>
+  <iframe id="my-response-iframe" name="my-response-iframe" frameborder="4" style="visibility: hidden;"></iframe>
+
+<script type="text/javascript">
+    // set the target on the form to point to a hidden iframe
+    // some browsers need the target set via JavaScript, no idea why...
+    document.getElementById('form').target = 'my-response-iframe';
+    // detect when the iframe reloads
+    var iframe = document.getElementById('my-response-iframe');
+    if (iframe) {
+      iframe.onload = function () {
+        // now you can do stuff, such as displaying a message or redirecting to a new page.
+        console.log("iframe hidden");
+      }
+    }
+    const func = () => {
+        console.log("iframe hidden");
+    }
+ </script>
+
+</body>
+</html>
