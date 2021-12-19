@@ -1,0 +1,23 @@
+#bloggerframe {
+  padding-left: 15px;
+  padding-right: 15px;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox */
+  overflow-y: scroll;
+  zoom: 1.2;
+  -webkit-transform: scale(1.2);
+}
+
+@media (min-width: 800px) {
+  #bloggerframe {
+    -ms-overflow-style: none; /* for Internet Explorer, Edge */
+    scrollbar-width: none; /* for Firefox */
+    overflow-y: scroll;
+    zoom: 2.75;
+    -webkit-transform: scale(1.2);
+  }
+}
+
+#bloggerframe::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
