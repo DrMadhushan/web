@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Inner Page - iPortfolio Bootstrap Template</title>
+  <title>Madhushan's Blog</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -29,14 +29,6 @@
   <link rel="stylesheet" href="../assets/css/blog.css">
 
   <script src="../assets/vendor/jquery/jquery.3.6.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <!-- =======================================================
-  * Template Name: iPortfolio - v3.7.0
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-  
 </head>
 
 <body>
@@ -49,14 +41,14 @@
     <div class="d-flex flex-column">
 
       <div class="profile">
-        <img src="../assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Alex Smith</a></h1>
+        <img src="../assets/img/profile-img.jpeg" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="../index.html">Madhushan</a></h1>
         <div class="social-links mt-3 text-center">
-          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+          <a href="https://www.twitter.com/drmadhushan" class="twitter"><i class="bx bxl-twitter"></i></a>
+          <a href="https://www.facebook.com/drmadhushan" class="facebook"><i class="bx bxl-facebook"></i></a>
           <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://www.github.com/drmadhushan" class="google-plus"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/madhushan-ramalingam" class="linkedin"><i class="bx bxl-linkedin"></i></a>
         </div>
       </div>
 
@@ -64,10 +56,10 @@
         <ul>
           <li><a href="../index.html#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="../index.html#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-          <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
-          <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
+          <li><a href="../index.html#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
+          <li><a href="../index.html#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
+          <li><a href="how-to-make-custom-form-interface-with-google-form-as-a-backend.html" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
+          <li><a href="../index.html#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
       </nav><!-- .nav-menu -->
     </div>
@@ -77,14 +69,89 @@
 
     <section class="inner-page">
       <div class="container">
-        <!-- Blogger iframe -->
-        <iframe 
-          id="bloggerframe" 
-          src="https://madathantanz.blogspot.com/2021/12/template-blog.html" 
-          frameborder="0"
-          width="100%"
-          height="700px">
-        </iframe>
+        <div id="blog">
+
+          <div id="blog-header">
+            <div id="blog-title" class="h2 pb-1">
+              How to make custom html form interface with Google form as backend
+            </div>
+            <div id="blog-subtitle" class="h5 text-muted pb-2">
+              
+            </div>
+            <div id="date" class="text-muted">
+              <i class="bi-calendar3 m-1" aria-hidden="true"></i> 20 Dec 2021
+            </div>
+            <hr>
+          </div>
+
+          <!-- Blog body -->
+          <div id="blog-body">
+
+            Google form is one of the powerful tool to collect information, conduct survey and any dumb work you can do with form filling. During this work and learn from home era, almost every organisation has shared at least an online form and everyone of you would have filled at least 5 forms. In your organisation or in your educational institute you would have think about sharing custom forms those are customised with branding, custom URL and funky things. Other than Google Forms there are many e-form tools are available to fulfil such expectations at a considerable cost.
+            You can still use your self served forms to collect data as well. Most of the times you might need to do some backend coding to enable form inputs in your website. What if you can host a form without any backend support but with high information security with very few html lines of code at no cost?
+          
+            <br><br>
+          
+            Follow these steps to provide your own frontend interface to your customers and collect the data to a google form response. Let us create a basic event registration form:
+          
+
+            <br><br>
+
+            <!-- List of content -->
+            <ol>
+              <li>
+                
+                  Create a google form with required fields but without authentication.
+                  -I.e. not enabling one response per email account.
+                
+                <img src="images/2.png" alt="google form" class="img-fluid rounded mx-auto d-block">
+              </li>
+              <li>
+                
+                  Create your own html form with same fields with any other custom styles.
+                
+                <img src="images/b1_1.png" alt="bootstrap form" class="img-fluid rounded mx-auto d-block">
+              </li>
+              <li>
+                
+                  Inspect your google form page and search for keyword “entry.” using <mark>ctrl+f</mark> or <mark>cmd+f</mark> .<br>
+                  Copy your action url in the form code and give it as the form <mark>action=''</mark> attribute. <br>
+                  You will find a set of hidden input fields as well.
+                
+                <img src="images/b1_6.png" alt="bootstrap form" class="img-fluid rounded mx-auto d-block">
+              </li>
+              <li>
+                Copy the name attribute of those input fields and include the same in your custom html form like this.
+                <img src="images/b1_8.png" alt="bootstrap form" class="img-fluid rounded mx-auto d-block">
+                Now we have worked upto getting the google form's work done.
+              </li>
+              <li>
+                Now if you fill and register ('submit') your custom html form, you will get the responses in your google form responses. <br>
+                but, once you submit the page will automaatically opens the google form's after-submission page like this,
+                <img src="images/b1_9.png" alt="bootstrap form" class="img-fluid rounded mx-auto d-block">
+              </li>
+              <li>
+                Redirecting to another domain is not a positive thing to your brand. So to overcome this issue you have to create a hidden iframe and load that response page (the one you see in the above image) inside that iframe. Add these lines of code in your form page;
+                <img src="images/b1_10.png" alt="bootstrap form" class="img-fluid rounded mx-auto d-block">
+                Thats it we are done!<br>
+                I have added some after-submission properties for the custom html form. So you can provide your customer with a decent custom response after they submit their inputs.
+                <img src="images/b1_11.png" alt="bootstrap form" class="img-fluid rounded mx-auto d-block">
+              </li>
+
+            </ol>
+            <!-- End of list -->
+            Find the relavent form script, google form and google response sheet via the following links,
+            <br>
+            <ul>
+              <li><a href="form.html">HTML form code</a></li>
+              <li><a href="https://forms.gle/RX43AABcT5o2pXAp7">Google Form</a></li>
+              <li><a href="https://docs.google.com/spreadsheets/d/1yG_JV8B5n7HLEV5SXwPAmk_L-8v_MG5NDI_O8xfRMyo/edit?usp=sharing">Google Sheet</a></li>
+            </ul>
+          </div>
+        </div>
+        <div id="like" class="col d-flex justify-content-right">
+          <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&width=10&layout=button_count&action=recommend&size=large&share=false&height=21&appId" style="border:none;overflow:hidden;display: block;" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
       </div>
     </section>
 
