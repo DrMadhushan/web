@@ -36,15 +36,34 @@
   padding-bottom: 10px;
   padding-top: 10px;
 }
+/* 
+#blog-card #blog-title {
+  font-size: 15px;
+}
+#blog-card #date {
+  font-size: 10px;
+} */
 
 @media (min-width: 800px) {
   #blog-body img {
     width: 70%;
   }
+
+  /* #blog-card #blog-title {
+    font-size: 20px;
+  }
+  #blog-card #date {
+    font-size: 15px;
+  } */
 }
 
 #blog-body mark {
   background-color: rgb(42, 42, 42);
   color: greenyellow;
   font-family: "Courier New", Courier, monospace;
+}
+
+.inner-page #featured .card {
+  background-color: #149ddd;
+  color: aliceblue;
 }
